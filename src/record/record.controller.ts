@@ -16,10 +16,9 @@ import { CreateRecordDto } from './dto/create-record.dto';
 import { UpdateRecordDto } from './dto/update-record.dto';
 import UpdatePaymentInfoDto from './dto/update-payment-info.dto';
 import { JwtGuard } from '../auth/guard/jwt.guard';
-import {AuthGuard} from "@nestjs/passport";
 
 @Controller('records')
-@UseGuards(AuthGuard('jwt'))
+@UseGuards(JwtGuard)
 export class RecordController {
   constructor(private readonly recordService: RecordService) {}
 
